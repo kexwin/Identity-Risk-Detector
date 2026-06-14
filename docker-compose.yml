@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - ANTHROPIC_API_KEY=your_key_here
+      - ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+    command: python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - API_BASE_URL=http://backend:8000
+    command: streamlit run dashboard/app.py --server.port=8501 --server.address=0.0.0.0
+    depends_on:
+      - backend

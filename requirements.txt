@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+networkx
+pyvis
+anthropic
+fastapi
+uvicorn
+streamlit
+plotly
+pytest
+python-dotenv
