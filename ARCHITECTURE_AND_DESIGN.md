@@ -1,5 +1,7 @@
 # Identity Risk Detector: Architecture & Design Documentation
 
+**GitHub Repository:** [https://github.com/kexwin/Identity-Risk-Detector](https://github.com/kexwin/Identity-Risk-Detector)
+
 ## 1. Platform Architecture
 
 The Identity Risk Detector is built on a modular, hybrid architecture combining rule-based heuristics with machine learning algorithms. The system comprises two main components:
